@@ -1,15 +1,20 @@
-import { FETCH_TOTAL_SCORE, FETCH_TOTAL_SCORE_SUCCESS, FETCH_TOTAL_SCORE_FAILURE } from '../actionTypes/score';
+import { GET_FETCH_TOTAL_SCORE, SET_FETCH_TOTAL_SCORE, SET_NOTIFICATION_ERROR,SET_NOTIFICATION_LOADING } from '../actionTypes/score';
 
 export const fetchTotalScore = () => ({
-  type: FETCH_TOTAL_SCORE
+  type: GET_FETCH_TOTAL_SCORE
 });
 
-export const fetchTotalScoreSuccess = (totalScore:any) => ({
-  type: FETCH_TOTAL_SCORE_SUCCESS,
-  payload: totalScore
+export const fetchTotalScoreSuccess = (payload:any) => ({
+  type: SET_FETCH_TOTAL_SCORE,
+  payload
 });
 
 export const fetchTotalScoreFailure = (error:any) => ({
-  type: FETCH_TOTAL_SCORE_FAILURE,
-  payload: error
+  type: SET_NOTIFICATION_ERROR,
+  error
+});
+
+export const fetchTotalScoreLoading = (loading:any) => ({
+  type: SET_NOTIFICATION_LOADING,
+  loading
 });
