@@ -32,7 +32,7 @@ import { useSelector, useDispatch } from 'react-redux';
 import { fetchTotalScore } from '../store/actions/score';
 
 const App = () => {
-    const totalScore = useSelector((state: any) => state.totalScore.totalScore);
+    const totalScore = useSelector((state: any) => state.totalScore.totalScore?.data);
     const loading = useSelector((state: any) => state.totalScore.loading);
     const error = useSelector((state: any) => state.totalScore.error);
     const dispatch = useDispatch();
@@ -48,7 +48,6 @@ const App = () => {
     if (error) {
         return <h2>Error occurred</h2>;
     }
-
     return (
         <div>
             <table>
@@ -59,16 +58,17 @@ const App = () => {
                     </tr>
                 </thead>
                 <tbody>
-                    {/* {totalScore && totalScore.map((item: any, index: number) => (
+                    {totalScore && totalScore.map((item: any, index: number) => (
                         <tr key={index}>
                             <td>{item.fullName}</td>
                             <td>{item.username}</td>
                         </tr>
-                    ))} */}
+                    ))}
                 </tbody>
             </table>
         </div>
     );
+
 };
 
 export default App;

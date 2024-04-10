@@ -1,9 +1,9 @@
-import Score from './components/score';
+import Root from './Routing/Root';
 
 function App() {
 
   return (
-    <Score/>
+    <Root/>
   )
 }
 

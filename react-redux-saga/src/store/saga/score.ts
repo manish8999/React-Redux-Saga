@@ -1,6 +1,6 @@
 import { takeEvery, put } from 'redux-saga/effects';
 import { fetchTotalScoreSuccess, fetchTotalScoreFailure } from '../actions/score';
-import { fetchTotalScore as apiFetchTotalScore } from '../api/score';
+import { fetchTotalScore as apiFetchTotalScore } from '../../api/score';
 import { FETCH_TOTAL_SCORE } from '../actionTypes/score';
 
 function* fetchTotalScoreSaga(): Generator<any, void, any> { 
